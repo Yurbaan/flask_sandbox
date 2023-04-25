@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title">
+        <h1>{% block title %} {{ call.firstname }} {{ call.lastname }}{% endblock %}</h1>
+    </span>
+    <div class="content">
+            <div class="call">
+                <p><b>{{ call.id }}</b></p>
+                <b>
+                    <p class="name">{{ call.firstname }} {{ call.lastname }}</p>
+                </b>
+                <p>{{ call.email }}</p>
+                <p>Joined: {{ call.created_at }}</p>
+                <div class="text">
+                    <h4>Text</h4>
+                    <p>{{ call.text }}</p>
+                </div>
+            </div>
+    </div>
+{% endblock %}

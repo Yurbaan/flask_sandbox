@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Calls {% endblock %}</h1>
+    <div class="content">
+        {% for call in calls %}
+            <div class="call">
+                <p><b>#{{ call.id }}</b></p>
+                <b>
+                    <p class="name">
+                        <a href="{{ url_for('call', call_id=call.id)}}">
+                            {{ call.firstname }} {{ call.lastname }}
+                        </a>
+                    </p>
+                </b>
+                <p>{{ call.email }}</p>
+                <p>Joined: {{ call.created_at }}</p>
+                <div class="text">
+                    <h4>Text</h4>
+                    <p>{{ call.text }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
